@@ -1,0 +1,66 @@
+.container{
+    width: 500px;
+    height: 300px;
+    margin-top: 150px;
+    background-color: #c3cff7;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+}
+body > div > h2{
+    width: 500px;
+    height: 40px;
+    background-color: black;
+    color: white;
+    border-radius: 10px 10px 0 0;
+}
+h2{
+    text-align: center;
+    padding-top: 5px;
+    color: #241f1f;
+}
+#timeDiv{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+}
+#timeDiv > div h3{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.work, .break{
+    /* border: 1px solid red; */
+    text-align: center;
+
+}
+.workInput, .breakInput{
+    margin-bottom: 30px;
+}
+#workClock, #breakClock{
+    font-size: 30px;
+    font-weight: bold;
+    color: blue;
+}
+input{
+    width: 70px;
+    height: 20px;
+    text-align: center;
+    background-color:rgb(243, 215, 164);
+    border-radius: 5px;
+}
+button{
+    text-align: top;
+    font-size: 25px;
+    border-radius: 10px;
+    background-color: lightgreen;
+    margin: 10px;
+} 
+#counterTime{
+    border: 2px solid black;
+    font-size: 21px;
+    text-align: center; 
+    margin: 0;
+    border-radius: 5px;;
+    background-color: rgb(243, 215, 164); ;
+  
+}

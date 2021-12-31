@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Pomodoro Clock</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Pomodoro Clock</h2>
+        <div id="timeDiv">
+            <div class="work";>
+                <h3 class="workText">Work</h3>
+                <div class="workInput">
+                    <input type="number" id="workmin" min="0" max="59" placeholder="Minutes">
+                    <input type="number" id="worksec" min="0" max="59" placeholder="Seconds">
+                </div>
+                <div id="workClock">
+                    <span id="workClockMin">25</span> :
+                    <span id="workClockSec">00</span>
+                </div>
+            </div>
+            <div id="counter">
+                <h3>Counter</h3>
+                <p id=counterTime>0</p>
+            </div>
+            <div class="break">
+                <h3 class="breakText">Break</h3>
+                <div class="breakInput">
+                    <input type="number" id="breakmin" min="0" max="59" placeholder="Minutes">
+                    <input type="number" id="breaksec" min="0" max="59" placeholder="Seconds">
+                </div>
+                <div id="breakClock">
+                    <span id="breakClockMin">05</span> :
+                    <span id="breakClockSec">00</span>
+                </div>
+            </div>
+        </div>
+       
+        <div">
+            
+            <div class="btn" style="text-align: center;">
+                <button id="start">Start</button>
+                <button id="pause">Pause</button>
+                <button id="reset">Reset</button>
+            </div>
+        </div>
+   
+    <script src="./main.js"></script>
+</body>
+</html>
