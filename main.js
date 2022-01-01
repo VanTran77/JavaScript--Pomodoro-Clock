@@ -15,8 +15,8 @@ let bClockSec = document.getElementById('breakClockSec');
 let countTime = document.getElementById('counterTime');
 
 var counter = 0;
-
 var myInterval;
+var pauseTime = false;
 
 function stopTimer() {
     clearInterval(myInterval);
@@ -24,6 +24,12 @@ function stopTimer() {
 }
 
 btnStart.addEventListener('click', function(){
+    if (pauseTime == false){
+        wClockSec.innerText = parseInt(workSec.value) || 0;
+        wClockMin.innerText = parseInt(workMin.value) || 0;
+        bClockSec.innerText = parseInt(breakSec.value) || 0 ;
+        bClockMin.innerText = parseInt(breakMin.value) || 0 ;
+    }
     if(myInterval === undefined){
         if(workMin.value != 0 || workSec.value!= 0 || breakMin.value!= 0 || breakSec.value!=0){
             workCountDown();
@@ -43,6 +49,7 @@ btnStart.addEventListener('click', function(){
 btnPause.addEventListener('click', function(){
     clearInterval(myInterval);
     myInterval=undefined;
+    pauseTime = true;
 })
 
 btnReset.addEventListener('click', function(){
@@ -55,14 +62,11 @@ btnReset.addEventListener('click', function(){
     breakMin.value = "00";
     breakSec.value = "00";
     countTime.innerText = 0;
+    pauseTime = false;
     stopTimer();
 })
 
 function workCountDown(){
-    wClockSec.innerText = parseInt(workSec.value) || 0;
-    wClockMin.innerText = parseInt(workMin.value) || 0;
-    bClockSec.innerText = parseInt(breakSec.value) || 0 ;
-    bClockMin.innerText = parseInt(breakMin.value) || 0 ;
     myInterval = setInterval(workTime, 1000);
     function workTime(){
         if(wClockSec.innerText >0) {
@@ -88,6 +92,10 @@ function breakCountDown(){
         } if (bClockMin.innerText == 0 && bClockSec.innerText == 0){
             stopTimer();
             countTime.innerText ++ ;
+            wClockSec.innerText = parseInt(workSec.value) || 0;
+            wClockMin.innerText = parseInt(workMin.value) || 0;
+            bClockSec.innerText = parseInt(breakSec.value) || 0 ;
+            bClockMin.innerText = parseInt(breakMin.value) || 0 ;
             workCountDown();
         }
     }
